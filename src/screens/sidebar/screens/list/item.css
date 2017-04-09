@@ -1,0 +1,8 @@
+.item:hover {
+  background: #bdc3c7;
+  color: #000;
+}
+
+.selected {
+  background: #0E93FB;
+}

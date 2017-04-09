@@ -1,0 +1,29 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+
+.fill {
+  flex: 1;
+}
+
+.scroll {
+  overflow-y: scroll;
+}
+
+.light {
+  background: #2C2F34;
+}
+
+.dark {
+  background: #272A2F;
+  fill: #ecf0f1;
+}
+
+.colored {
+  background: #2C2F34;
+}
