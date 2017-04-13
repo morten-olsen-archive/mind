@@ -1,17 +1,25 @@
 import { connect } from 'react-redux';
-import { addFilter, setFields } from 'actions/search';
+import { addFilter, removeFilter, setFields } from 'actions/search';
 import Component from './component.jsx';
 
 export default connect(state => ({
   filters: state.search.userFilters,
   currentFilter: state.search.currentFilter,
 }), dispatch => ({
-  addFilter: ({ field, type, value }) => {
-    dispatch(addFilter(field, type, value));
+  addFilter: ({ not, field, type, value }) => {
+    dispatch(addFilter(not, field, type, value));
+  },
+  removeFilter: (index) => {
+    dispatch(removeFilter(index));
   },
   setField: (value) => {
     dispatch(setFields({
       field: value,
+    }));
+  },
+  setNot: (value) => {
+    dispatch(setFields({
+      not: value,
     }));
   },
   setType: (value) => {

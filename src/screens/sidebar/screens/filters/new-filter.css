@@ -1,0 +1,26 @@
+.field, .value {
+  flex: 1;
+  width: 0;
+  text-align: center;
+}
+.type {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Fira Code';
+}
+.button {
+  background: red;
+  width: 22px;
+  height: 22px;
+  border: none;
+  outline: none;
+}
+.button svg {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+.button svg path {
+  fill: #fff;
+}

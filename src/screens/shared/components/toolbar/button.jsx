@@ -21,7 +21,7 @@ const Button = ({ icon, children, type, onClick }) => (
 Button.propTypes = {
   icon: PropTypes.string,
   children: PropTypes.node,
-  type: PropTypes.oneOf('positive', 'netagive', 'neutral'),
+  type: PropTypes.oneOf(['positive', 'negative', 'neutral']),
   onClick: PropTypes.func,
 };
 

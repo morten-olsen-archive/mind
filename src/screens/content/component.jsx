@@ -23,7 +23,7 @@ const Content = ({
       <Button icon="done" onClick={() => onSave(document)} />
       <Button icon="more_vert" />
     </Toolbar>
-    <Toolbar theme="colored" className={styles.toolbar}>
+    <Toolbar theme="light" className={styles.toolbar}>
       <input onChange={evt => onTitleChanged(evt.target.value)} value={document.title || ''} />
     </Toolbar>
     <Panel fill horizontal>
@@ -37,7 +37,6 @@ const Content = ({
 );
 
 Content.propTypes = {
-  View: PropTypes.func.isRequired,
 };
 
 Content.defaultProps = {

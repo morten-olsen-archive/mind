@@ -34,8 +34,8 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./screens/content/screens/editor/component.jsx', () => {
-    const NextRootContainer = require('./screens/content/screens/editor/component.jsx');
+  module.hot.accept('screens/app', () => {
+    const NextRootContainer = require('screens/app');
     render(NextRootContainer);
   });
 }

@@ -6,8 +6,9 @@ const NewFilter = ({
   field,
   type,
   value,
+  removeFilter,
 }) => (
-  <Panel>
+  <Panel onClick={removeFilter}>
     {field} {type} {value}
   </Panel>
 );

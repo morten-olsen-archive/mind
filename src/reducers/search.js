@@ -29,6 +29,7 @@ export default (state = defaultState, action) => {
     case 'ADD_FILTER': {
       return {
         ...state,
+        currentFilter: defaultState.currentFilter,
         userFilters: [...state.userFilters, action.payload],
       };
     }
@@ -42,6 +43,7 @@ export default (state = defaultState, action) => {
     case 'REMOVE_FILTER': {
       const newState = {
         ...state,
+        userFilters: [...state.userFilters],
       };
       newState.userFilters.splice(action.payload, 1);
       return newState;

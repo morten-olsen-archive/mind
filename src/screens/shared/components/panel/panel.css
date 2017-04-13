@@ -5,6 +5,7 @@
 
 .horizontal {
   flex-direction: row;
+  justify-content: center;
 }
 
 .fill {

@@ -36,7 +36,7 @@ const buildBranch = (elms, tokens, name, inputToken = {}, exp = {}) => {
         elms[type] || 'div',
         {
           ...token,
-          exports: exp,
+          exports: elms[type] ? exp : undefined,
         },
       ));
     }
@@ -46,7 +46,7 @@ const buildBranch = (elms, tokens, name, inputToken = {}, exp = {}) => {
     elm,
     {
       ...inputToken,
-      exports: exp,
+      exports: elm === 'div' ? undefined : exp,
     },
     ...items,
   );

@@ -8,17 +8,21 @@ const Filters = ({
   currentFilter,
   setField,
   setType,
+  setNot,
   setValue,
   addFilter,
+  removeFilter,
 }) => (
   <Panel>
-    {filters.map(filter => (
+    {filters.map((filter, i) => (
       <Filter
+        removeFilter={() => removeFilter(i)}
         {...filter}
       />
     ))}
     <NewFilter
       filter={currentFilter}
+      setNot={setNot}
       setField={setField}
       setType={setType}
       setValue={setValue}

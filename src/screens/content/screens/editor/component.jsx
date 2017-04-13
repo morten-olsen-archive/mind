@@ -20,6 +20,8 @@ export class Editor extends Component {
         selectOnLineNumbers: true,
         wrappingColumn: 0,
         wrappingIndent: 'indent',
+        fontFamily: 'Fira Code',
+        fontLigatures: true,
       },
     };
   }
