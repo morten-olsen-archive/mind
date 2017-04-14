@@ -11,7 +11,7 @@ const views = {
 };
 
 export default connect(state => ({
-  views: [Editor, Preview],
+  views,
   document: state.documents.selected,
 }), dispatch => ({
   onSave: (document) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import DocumentPropType from 'prop-types/document';
 import Markdown from 'components/markdown';
 import Code from 'components/code';
 import Panel from 'components/panel';
@@ -15,6 +16,7 @@ const Preview = ({ document }) => {
 };
 
 Preview.propTypes = {
+  document: DocumentPropType.isRequired,
 };
 
 export default Preview;

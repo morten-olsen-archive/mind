@@ -14,11 +14,17 @@ const NewFilter = ({
 );
 
 NewFilter.propTypes = {
-
+  field: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType(
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ).isRequired,
+  removeFilter: PropTypes.func,
 };
 
 NewFilter.defaultProps = {
-
+  removeFilter: () => {},
 };
 
 export default NewFilter;

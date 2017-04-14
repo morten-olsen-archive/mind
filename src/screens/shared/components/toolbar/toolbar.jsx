@@ -5,7 +5,7 @@ import Panel from 'components/panel';
 const Toolbar = ({
   children,
   theme,
-  className
+  className,
 }) => (
   <Panel horizontal theme={theme} className={className} padding={10}>
     {children}

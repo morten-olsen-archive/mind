@@ -56,6 +56,8 @@ Panel.propTypes = {
     'light',
     'dark',
   ]),
+  onClick: PropTypes.func,
+  scroll: PropTypes.bool,
 };
 
 Panel.defaultProps = {
@@ -67,6 +69,8 @@ Panel.defaultProps = {
   width: undefined,
   height: undefined,
   theme: undefined,
+  onClick: undefined,
+  scroll: false,
 };
 
 export default Panel;

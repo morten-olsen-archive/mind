@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import DocumentPropType from 'prop-types/document';
 import MonacoEditor from 'react-monaco-editor';
 
 export class Editor extends Component {
@@ -10,6 +11,7 @@ export class Editor extends Component {
         selectOnLineNumbers: PropTypes.bool,
       }),
       onBodyChanged: PropTypes.func.isRequired,
+      document: DocumentPropType.isRequired,
     };
   }
 

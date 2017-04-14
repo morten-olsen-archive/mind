@@ -15,7 +15,7 @@ export const addFilter = (not, field, type, value) => {
     meta: {
       after: reload(),
     },
-  }
+  };
 };
 
 export const removeFilter = index => ({

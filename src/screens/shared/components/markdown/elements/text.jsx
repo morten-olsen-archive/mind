@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Html from 'components/code/html';
 
 import { InlineLexer } from 'marked';
@@ -6,7 +7,7 @@ import katex from 'katex';
 
 import 'katex/dist/katex.min.css';
 
-export default ({ text, children }) => {
+const Text = ({ text, children }) => {
   const innerText = text || children;
   const lexer = new InlineLexer([], {});
   const rendered = lexer.output(innerText);
@@ -21,3 +22,15 @@ export default ({ text, children }) => {
     <Html tag="span" source={withLatex} />
   );
 };
+
+Text.propTypes = {
+  text: PropTypes.string,
+  children: PropTypes.node,
+};
+
+Text.defaultProps = {
+  text: undefined,
+  children: undefined,
+};
+
+export default Text;

@@ -54,7 +54,7 @@ class Output extends Component {
 
   update(next) {
     Promise.resolve(renderOutput(next)).then((output) => {
-      const node = ReactDOM.findDOMNode(this);
+      const node = ReactDOM.findDOMNode(this); // eslint-disable-line
       /* if (!this.root) {
         this.root = node.createShadowRoot();
       }*/

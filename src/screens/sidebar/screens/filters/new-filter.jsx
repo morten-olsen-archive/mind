@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FilterPropType from 'prop-types/filter';
+import Glyph from 'components/glyph';
 import Panel from 'components/panel';
 import styles from './new-filter.css';
-import Glyph from 'components/glyph';
 
 const NewFilter = ({
   filter,
@@ -61,11 +62,21 @@ const NewFilter = ({
 );
 
 NewFilter.propTypes = {
-
+  filter: FilterPropType,
+  setNot: PropTypes.func,
+  setField: PropTypes.func,
+  setType: PropTypes.func,
+  setValue: PropTypes.func,
+  addFilter: PropTypes.func,
 };
 
 NewFilter.defaultProps = {
-
+  filter: {},
+  setNot: () => {},
+  setField: () => {},
+  setType: () => {},
+  setValue: () => {},
+  addFilter: () => {},
 };
 
 export default NewFilter;

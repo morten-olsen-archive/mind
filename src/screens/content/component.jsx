@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DocumentPropType from 'prop-types/document';
 import Panel from 'components/panel';
 import Toolbar from 'components/toolbar';
 import Button from 'components/toolbar/button';
@@ -27,19 +28,32 @@ const Content = ({
       <input onChange={evt => onTitleChanged(evt.target.value)} value={document.title || ''} />
     </Toolbar>
     <Panel fill horizontal>
-      {views.map(View => (
-        <Panel fill scroll>
-          <View />
-        </Panel>
-      ))}
+      {Object.keys(views).map((key) => {
+        const View = views[key];
+        return (
+          <Panel fill scroll>
+            <View />
+          </Panel>
+        );
+      })}
     </Panel>
   </Panel>
 );
 
 Content.propTypes = {
+  views: PropTypes.shape({
+    editor: PropTypes.func,
+    preview: PropTypes.func,
+  }),
+  document: DocumentPropType.isRequired,
+  onSave: PropTypes.func,
+  onTitleChanged: PropTypes.func,
 };
 
 Content.defaultProps = {
+  views: {},
+  onSave: () => {},
+  onTitleChanged: () => {},
 };
 
 export default Content;
