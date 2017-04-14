@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './elements/header.js';
-import Paragraph from './elements/paragraph.js';
-import List from './elements/list.js';
-import ListItem from './elements/list-item.js';
-import Text from './elements/text.js';
-import Code from './elements/code.js';
-import Html from './elements/html.js';
+import Header from './elements/header.jsx';
+import Paragraph from './elements/paragraph.jsx';
+import List from './elements/list.jsx';
+import ListItem from './elements/list-item.jsx';
+import Text from './elements/text.jsx';
+import Code from './elements/code.jsx';
+import Html from './elements/html.jsx';
 
 const elements = {
   heading: Header,
