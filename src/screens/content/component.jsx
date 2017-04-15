@@ -13,15 +13,32 @@ const Content = ({
   document,
   onSave,
   onTitleChanged,
+  onRemove,
+  toggleContentView,
 }) => (
-  <Panel fill>
+  <Panel fill className={styles.content}>
     <Toolbar>
       <Button icon="mode_edit" />
-      <Button icon="code" />
-      <Button icon="laptop" />
+      <Button
+        selected={!!views.editor}
+        icon="code"
+        onClick={() => toggleContentView('editor')}
+      />
+      <Button
+        selected={!!views.preview}
+        icon="laptop"
+        onClick={() => toggleContentView('preview')}
+      />
       <Fill />
-      <Button icon="github" />
-      <Button icon="done" onClick={() => onSave(document)} />
+      <Button
+        className={document.dirty ? styles.dirty : undefined}
+        icon="done"
+        onClick={() => onSave(document)}
+      />
+      {
+        !!document.id
+        && <Button icon="remove_circle_outline" onClick={() => onRemove(document.id)} />
+      }
       <Button icon="more_vert" />
     </Toolbar>
     <Toolbar theme="light" className={styles.toolbar}>
@@ -31,7 +48,7 @@ const Content = ({
       {Object.keys(views).map((key) => {
         const View = views[key];
         return (
-          <Panel fill scroll>
+          <Panel key={key} fill scroll className={styles.view}>
             <View />
           </Panel>
         );
@@ -48,12 +65,16 @@ Content.propTypes = {
   document: DocumentPropType.isRequired,
   onSave: PropTypes.func,
   onTitleChanged: PropTypes.func,
+  onRemove: PropTypes.func,
+  toggleContentView: PropTypes.func,
 };
 
 Content.defaultProps = {
   views: {},
   onSave: () => {},
   onTitleChanged: () => {},
+  onRemove: () => {},
+  toggleContentView: () => {},
 };
 
 export default Content;

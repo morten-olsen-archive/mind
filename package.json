@@ -55,7 +55,8 @@
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --hot",
-    "test:lint": "eslint src",
+    "electron": "yarn build && electron ./docs",
+    "test:lint": "eslint ./src",
     "test:mocha": "mocha-webpack --webpack-config webpack.config.js src/**/*.test.js"
   }
 }

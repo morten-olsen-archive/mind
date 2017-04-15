@@ -6,8 +6,10 @@ const defaultOptions = {
   tables: true,
 };
 
-export default ({ source, exports = {}, options = defaultOptions, elements }) => {
+const Markdown = ({ source, exports = {}, options = defaultOptions, elements }) => {
   const lexer = new Lexer(options);
   const tokens = lexer.lex(source);
   return builder(elements, tokens, exports);
 };
+
+export default Markdown;

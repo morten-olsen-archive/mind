@@ -16,10 +16,10 @@ const NewFilter = ({
 NewFilter.propTypes = {
   field: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType(
+  value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
-  ).isRequired,
+  ]).isRequired,
   removeFilter: PropTypes.func,
 };
 

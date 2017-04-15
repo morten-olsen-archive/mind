@@ -1,5 +1,5 @@
 const defaultState = {
-  contentViews: [],
+  contentViews: ['editor'],
 };
 
 export default (state = defaultState, action) => {
@@ -11,7 +11,7 @@ export default (state = defaultState, action) => {
       };
     }
     case 'TOGGLE_CONTENT_VIEW': {
-      const index = state.contentViews.findIndexOf(action.payload);
+      const index = state.contentViews.indexOf(action.payload);
       if (index >= 0) {
         return {
           ...state,

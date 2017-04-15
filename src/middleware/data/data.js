@@ -2,12 +2,14 @@ import * as reducerActions from 'actions/documents';
 
 import find from './find';
 import save from './save';
+import remove from './remove';
 
 
 const AREA_NAME = '@@data/';
 const actions = {
   find,
   save,
+  remove,
 };
 
 export default ({ dispatch }) => next => (action) => {

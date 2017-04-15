@@ -8,3 +8,12 @@
   width: 22px;
   height: 22px;
 }
+
+.inactive svg path {
+  fill: #555;
+}
+
+.selected {
+  border-bottom: solid 3px red;
+  margin-bottom: -3px;
+}

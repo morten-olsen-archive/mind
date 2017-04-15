@@ -35,6 +35,9 @@ module.exports = {
     }, {
       from: path.join(__dirname, 'node_modules/katex/dist/fonts'),
       to: path.join(__dirname, 'docs/fonts'),
+    }, {
+      from: path.join(__dirname, 'electron'),
+      to: path.join(__dirname, 'docs'),
     }]),
     new webpack.HotModuleReplacementPlugin(),
     new ContextReplacementPlugin(/[^/]+\.svg$/),

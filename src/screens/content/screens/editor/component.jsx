@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DocumentPropType from 'prop-types/document';
-import MonacoEditor from 'react-monaco-editor';
+import MonacoEditor from './monaco-editor';
 
 export class Editor extends Component {
   static get propTypes() {
@@ -22,8 +22,8 @@ export class Editor extends Component {
         selectOnLineNumbers: true,
         wrappingColumn: 0,
         wrappingIndent: 'indent',
-        fontFamily: 'Fira Code',
-        fontLigatures: true,
+        /* fontFamily: 'Fira Code',
+        fontLigatures: true, */
       },
     };
   }
@@ -56,8 +56,7 @@ export class Editor extends Component {
 
     return (
       <MonacoEditor
-        width="100%"
-        height="100%"
+        className="test"
         theme="vs-dark"
         editorDidMount={this.setEditor.bind(this)}
         onChange={onBodyChanged}

@@ -23,13 +23,17 @@ export default (state = defaultState, action) => {
         selected: {
           ...state.selected,
           ...action.payload,
+          dirty: true,
         },
       };
     }
     case 'DOCUMENT_SAVE': {
       return {
         ...state,
-        selected: action.payload.document,
+        selected: {
+          ...action.payload.document,
+          dirty: false,
+        },
       };
     }
     default: {

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { save, setFields } from 'actions/documents';
+import { toggleContentView } from 'actions/ui';
+import { save, setFields, remove } from 'actions/documents';
 import Component from './component.jsx';
 
 import Editor from './screens/editor';
@@ -10,8 +11,14 @@ const views = {
   preview: Preview,
 };
 
+const getViews = state =>
+  state.ui.contentViews.reduce((output, view) => {
+    output[view] = views[view];
+    return output;
+  }, {});
+
 export default connect(state => ({
-  views,
+  views: getViews(state),
   document: state.documents.selected,
 }), dispatch => ({
   onSave: (document) => {
@@ -21,5 +28,11 @@ export default connect(state => ({
     dispatch(setFields({
       title,
     }));
+  },
+  toggleContentView: (name) => {
+    dispatch(toggleContentView(name));
+  },
+  onRemove: (id) => {
+    dispatch(remove(id));
   },
 }))(Component);

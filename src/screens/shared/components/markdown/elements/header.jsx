@@ -8,12 +8,12 @@ const Header = ({ text, depth }) => {
   );
 };
 
-Header.defaultProps = {
+Header.propTypes = {
   text: PropTypes.string,
   depth: PropTypes.number,
 };
 
-defaultProps = {
+Header.defaultProps = {
   text: undefined,
   depth: 1,
 };

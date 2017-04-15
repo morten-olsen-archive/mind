@@ -1,3 +1,16 @@
+.content {
+  overflow: hidden;
+}
+
 .toolbar {
   border-bottom: 1px solid #272A2F;
+}
+
+.view {
+  flex:  1 0 1;
+  overflow-x: hidden;
+}
+
+.dirty path {
+  fill: red;
 }

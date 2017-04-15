@@ -21,6 +21,18 @@ export default class MemoryDB {
     }
   }
 
+  remove(collection, id) {
+    this.data[collection] = this.data[collection] || [];
+    const index = this.data[collection].findIndex(doc => doc.id === id);
+    if (index >= 0) {
+      this.data[collection].splice(index, 1);
+    }
+
+    if (this.onSave) {
+      this.onSave(this.data);
+    }
+  }
+
   search(collection, {
     filters = [],
     sort = {},

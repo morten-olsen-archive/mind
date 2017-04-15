@@ -1,8 +1,12 @@
+.item {
+  border-bottom: 1px solid #272A2F;
+}
+
 .item:hover {
-  background: #bdc3c7;
-  color: #000;
+  background: #272A2F;
 }
 
 .selected {
-  background: #0E93FB;
+  background: #272A2F;
+  border-left: solid 3px red;
 }
