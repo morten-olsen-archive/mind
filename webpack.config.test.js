@@ -3,7 +3,7 @@ const path = require('path');
 const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
     modules: [
