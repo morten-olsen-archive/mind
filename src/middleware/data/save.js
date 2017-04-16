@@ -13,7 +13,7 @@ export default (payload) => {
     tags: [],
     ...payload,
     updated: new Date().getTime(),
-    flag: payload.id ? 'updated' : 'created',
+    flag: 'updated',
   };
 
   const modules = {};
@@ -30,6 +30,7 @@ export default (payload) => {
     .then((db) => {
       db.set('documents', document);
       Object.keys(modules).map(name => db.set('modules', {
+        id: name,
         name,
         module: modules[name],
       }));

@@ -15,7 +15,7 @@ describe('middleware', () => {
           title: 'hello',
           body: 'world',
         }).then(({ document, modules }) => {
-          expect(document.flag).to.equal('created');
+          expect(document.flag).to.equal('updated');
           expect(document.created).to.be.at.least(1);
           expect(document.updated).to.be.equal(document.updated);
           expect(document.id).to.have.lengthOf(36);

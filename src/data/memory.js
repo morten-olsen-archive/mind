@@ -1,5 +1,8 @@
-export default class MemoryDB {
+import DataSource from './data-source';
+
+export default class MemoryDB extends DataSource {
   constructor(data, onSave) {
+    super();
     this.data = data || {};
     this.onSave = onSave;
   }
@@ -60,6 +63,7 @@ export default class MemoryDB {
         applyFilter(filter.fn);
       }
     });
+
     if (sort) {
       Object.keys(sort).forEach((key) => {
         const asc = sort[key] === 'asc';

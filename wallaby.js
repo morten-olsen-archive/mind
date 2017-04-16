@@ -1,7 +1,8 @@
 const wallabyWebpack = require('wallaby-webpack');
-const config = require('./webpack.config.js');
+const config = require('./webpack.config.test.js');
 require('babel-polyfill');
 
+config.entry = undefined;
 const wallabyPostprocessor = wallabyWebpack(config);
 
 module.exports = wallaby => ({
