@@ -36,6 +36,16 @@ export default class MemoryDB extends DataSource {
     }
   }
 
+  resetSync(collection) {
+    this.data[collection] = this.data[collection].map(d => ({
+      ...d,
+      flag: 'updated',
+    }));
+    if (this.onSave) {
+      this.onSave(this.data);
+    }
+  }
+
   search(collection, {
     filters = [],
     sort = {},

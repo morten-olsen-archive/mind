@@ -1,6 +1,3 @@
-import * as files from './files';
-
-
 export const save = (document, responseType = 'DOCUMENT_SAVE') => ({
   type: '@@data/SAVE',
   payload: {
@@ -36,6 +33,17 @@ export const reload = () => state => find({
   filters: state.search.userFilters,
 });
 
+export const resetUpdated = () => ({
+  type: '@@data/RESETSYNC',
+  payload: {
+    collection: 'documents',
+  },
+  meta: {
+    after: reload(),
+    responseType: 'RESET_UPDATED',
+  },
+});
+
 export const remove = id => ({
   type: '@@data/REMOVE',
   payload: {
@@ -55,9 +63,6 @@ export const select = document => (state) => {
     return {
       type: 'DOCUMENT_SELECTED',
       payload: document,
-      meta: {
-        after: files.load(),
-      },
     };
   } else {
     return {

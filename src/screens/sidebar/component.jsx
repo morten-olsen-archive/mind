@@ -18,12 +18,13 @@ const Sidebar = ({
   toggleFilters,
   onCreate,
   showView,
+  onSync,
 }) => (
   <Panel width={250}>
     <Toolbar>
       <Button icon="menu" />
       <Button icon="account_circle" />
-      <Button icon="settings" />
+      <Button icon="settings" onClick={onSync} />
       <Fill />
       <Button icon="add_circle_outline" onClick={onCreate} />
       <Button

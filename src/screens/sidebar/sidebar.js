@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { select, create } from 'actions/documents';
+import { sync } from 'actions/sync';
 import { toggleFilters, setSidebarView } from 'actions/ui';
 import Component from './component.jsx';
 
@@ -28,5 +29,8 @@ export default connect(state => ({
   },
   onCreate: () => {
     dispatch(create());
+  },
+  onSync: () => {
+    dispatch(sync());
   },
 }))(Component);

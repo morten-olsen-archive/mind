@@ -11,6 +11,8 @@ class DataSource {
     .then(results => results[0]);
   }
 
+  resetSync() {}
+
   markSynced(document) {
     return Promise.resolve(this.set('documents', {
       ...document,

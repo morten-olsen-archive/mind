@@ -16,6 +16,7 @@ const ListItem = ({
     onClick={() => selectItem(item)}
     padding={15}
     className={classnames(styles.item, {
+      [styles.updated]: item.flag === 'updated',
       [styles.selected]: id === selectedId,
     })}
   >

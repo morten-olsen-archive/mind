@@ -10,3 +10,7 @@
   background: #272A2F;
   border-left: solid 3px red;
 }
+
+.updated {
+  border-left: solid 3px #9b59b6;
+}

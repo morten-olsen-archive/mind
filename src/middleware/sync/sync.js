@@ -24,7 +24,13 @@ export default ({ dispatch }) => next => (action) => {
     })
     .then(() => dispatch({
       type: '@@sync/COMPLETED',
-    }));
+    }))
+    .catch((err) => {
+      dispatch({
+        type: '@@sync/FAILED',
+        error: err,
+      });
+    });
   } else {
     return next(action);
   }
